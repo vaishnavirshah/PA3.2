@@ -1,0 +1,7 @@
+// compiling
+
+ javac -cp .:lib/* src/server/*.java src/server/*/*.java test/*.java src/client/*.java
+
+// Running 
+
+java -cp .:lib/*:src/::test/ GraderFaultTolerance

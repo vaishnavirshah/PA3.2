@@ -1,0 +1,89 @@
+Dec 01, 2023 9:21:09 AM edu.umass.cs.gigapaxos.PaxosConfig sanityCheck
+WARNING: GIGAPAXOS_DATA_DIR must be an absolute path; specifying "." is deprecated and discouraged.
+Dec 01, 2023 9:21:09 AM edu.umass.cs.reconfiguration.ReconfigurableNode <init>
+INFO: server2:server2 listening on /127.0.0.1:1902
+Dec 01, 2023 9:21:09 AM edu.umass.cs.nio.NIOTransport initSelector
+INFO: MessageNIOTransport:server2:0 listening on channel sun.nio.ch.ServerSocketChannelImpl[/127.0.0.1:1902] with ssl mode CLEAR
+Dec 01, 2023 9:21:10 AM edu.umass.cs.reconfiguration.ReconfigurableNode createApp
+INFO: MyDBReplicableAppGP does not implement ClientMessenger, which means the app should either rely on ClientRequest or not expect to send  responses back to clients or rely on alternate means for messaging.
+Dec 01, 2023 9:21:10 AM edu.umass.cs.nio.JSONMessenger <init>
+INFO: JSONMessengerserver2 starting worker with ssl mode CLEAR
+Dec 01, 2023 9:21:10 AM edu.umass.cs.nio.NIOTransport initSelector
+INFO: MessageNIOTransport:null:0 listening on channel sun.nio.ch.ServerSocketChannelImpl[/127.0.0.1:62694] with ssl mode CLEAR
+Dec 01, 2023 9:21:10 AM edu.umass.cs.gigapaxos.SQLPaxosLogger$Journaler createLogfile
+INFO: Journalerserver2 created new log file ./paxos_logs/paxos_journal.server2/log.server2.18c25c13fca
+Dec 01, 2023 9:21:12 AM edu.umass.cs.gigapaxos.SQLPaxosLogger connectDB
+INFO: SQLPaxosLoggerserver2 attempting getCursorConn() to db jdbc:derby:./paxos_logs/paxos_dbserver2
+Dec 01, 2023 9:21:12 AM edu.umass.cs.gigapaxos.SQLPaxosLogger connectDB
+INFO: SQLPaxosLoggerserver2 connected to and created database paxos_dbserver2
+Dec 01, 2023 9:21:12 AM edu.umass.cs.gigapaxos.SQLPaxosLogger createTable
+INFO: Table messagesserver2 already exists
+Dec 01, 2023 9:21:12 AM edu.umass.cs.gigapaxos.SQLPaxosLogger createTables
+INFO: Created tables checkpointserver2 and messagesserver2 and pauseserver2
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.SQLPaxosLogger sanityCheckTables
+INFO: SQLPaxosLoggerserver2 : CHECKPOINTSERVER2 : STATE : 32672
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.SQLPaxosLogger sanityCheckTables
+INFO: SQLPaxosLoggerserver2 : MESSAGESSERVER2 : MESSAGE : 5242880
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosManager initiateRecovery
+INFO: PaxosManager:server2 beginning to recover checkpoints
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosManager initiateRecovery
+INFO: PaxosManager:server2 has recovered checkpoints for 0 paxos groups
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosManager initiateRecovery
+WARNING: No checkpoint state found for node server2. This can only happen if
+(1) the node is newly joining the system, or
+(2) the node previously crashed before completing even a single checkpoint, or
+(3) the node's checkpoint was manually deleted.
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosManager initiateRecovery
+INFO: PaxosManager:server2 beginning to roll forward logged messages
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.SQLPaxosLogger getMinLogfile
+INFO: SQLPaxosLoggerserver2 found 0 instances unpaused before last shutdown
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.SQLPaxosLogger initiateReadMessages
+INFO: SQLPaxosLoggerserver2 rolling forward logged messages from logfile ./paxos_logs/paxos_journal.server2/log.server2.18c25c13fca onwards
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosManager initiateRecovery
+INFO: PaxosManager:server2 rolled forward 0 messages total across 0 paxos groups
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosManager initiateRecovery
+INFO: ------------------PaxosManager:server2 recovery complete-------------------
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosManager initClientMessenger
+INFO: PaxosManager:server2 creating client messenger at /127.0.0.1:2002; (offset=100)
+Dec 01, 2023 9:21:13 AM edu.umass.cs.nio.NIOTransport initSelector
+INFO: MessageNIOTransport:null:0 failed to bind to /127.0.0.1:2002; trying wildcard address instead on port 2002
+Dec 01, 2023 9:21:13 AM edu.umass.cs.nio.NIOTransport initSelector
+INFO: MessageNIOTransport:null:0 listening on channel sun.nio.ch.ServerSocketChannelImpl[/0:0:0:0:0:0:0:0:2002] with ssl mode CLEAR
+Dec 01, 2023 9:21:13 AM edu.umass.cs.reconfiguration.ReconfigurableNode createApp
+INFO: server2 creating default service name MyDBReplicableAppGP0 with replica group [server2, server1, server0]
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.SQLPaxosLogger putCheckpointState
+INFO: SQLPaxosLoggerserver2 checkpointed (MyDBReplicableAppGP0:0, [server2, server1, server0], <0, 0:1984149839>, (-1, ./paxos_logs/paxos_journal.server2/log.server2.18c25c13fca) [{}]) in 65 ms
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosInstanceStateMachine <init>
+INFO: server2 initialized paxos coordinator MyDBReplicableAppGP0:0 with members [1984149837,1984149838,1984149839]; PaxosAcceptor:server2 PaxosCoordinator:server2 {initial_state=[{}]}
+Dec 01, 2023 9:21:13 AM edu.umass.cs.reconfiguration.ReconfigurableNode createApp
+INFO: server2 creating AR_AR_NODES with replica group [server2, server1, server0]
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.SQLPaxosLogger putCheckpointState
+INFO: SQLPaxosLoggerserver2 checkpointed (AR_AR_NODES:0, [server2, server1, server0], <0, 0:1984149837>, (-1, ./paxos_logs/paxos_journal.server2/log.server2.18c25c13fca) [{server2=/127.0.0.1:[...]er0=/127.0.0.1:1900}]) in 4 ms
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosInstanceStateMachine <init>
+INFO: server2 initialized paxos acceptor AR_AR_NODES:0 with members [1984149837,1984149838,1984149839]; PaxosAcceptor:server2 null {initial_state=[{server2=/127.0.0.1:1902, server1=/127.0.0.1:1901, server0=/127.0.0.1:1900}]}
+Dec 01, 2023 9:21:13 AM edu.umass.cs.reconfiguration.ReconfigurableNode createApp
+INFO: server2 creating AR_RC_NODES with replica group [server2, server1, server0]
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.SQLPaxosLogger putCheckpointState
+INFO: SQLPaxosLoggerserver2 checkpointed (AR_RC_NODES:0, [server2, server1, server0], <0, 0:1984149839>, (-1, ./paxos_logs/paxos_journal.server2/log.server2.18c25c13fca) [{RC0=/127.0.0.1:9000}]) in 7 ms
+Dec 01, 2023 9:21:13 AM edu.umass.cs.gigapaxos.PaxosInstanceStateMachine <init>
+INFO: server2 initialized paxos coordinator AR_RC_NODES:0 with members [1984149837,1984149838,1984149839]; PaxosAcceptor:server2 PaxosCoordinator:server2 {initial_state=[{RC0=/127.0.0.1:9000}]}
+Dec 01, 2023 9:21:13 AM edu.umass.cs.nio.AbstractPacketDemultiplexer register
+INFO: {0} registering types [DELETE_SERVICE_NAME, ACTIVE_REPLICA_ERROR, CREATE_SERVICE_NAME, REPLICABLE_CLIENT_REQUEST, REQUEST_ACTIVE_REPLICAS, ECHO_REQUEST] for TXUtils.GigaPaxosClient
+Dec 01, 2023 9:21:13 AM edu.umass.cs.nio.AbstractPacketDemultiplexer register
+INFO: {0} registering types [RECONFIGURE_ACTIVE_NODE_CONFIG, RECONFIGURE_RC_NODE_CONFIG] for TXUtils.GigaPaxosClient
+Dec 01, 2023 9:21:13 AM edu.umass.cs.nio.AbstractPacketDemultiplexer register
+INFO: TXUtils.GigaPaxosClient registering types [REPLICABLE_CLIENT_REQUEST] for TXUtils.GigaPaxosClient
+Dec 01, 2023 9:21:13 AM edu.umass.cs.nio.NIOTransport initSelector
+INFO: MessageNIOTransport:null:0 listening on channel sun.nio.ch.ServerSocketChannelImpl[/0:0:0:0:0:0:0:0:62708] with ssl mode CLEAR
+Dec 01, 2023 9:21:13 AM edu.umass.cs.reconfiguration.ReconfigurableAppClientAsync <init>
+INFO: TXUtils.GigaPaxosClient62708 listening on /0:0:0:0:0:0:0:0:62708; ssl mode = CLEAR; client port offset = 100
+Dec 01, 2023 9:21:13 AM edu.umass.cs.reconfiguration.ActiveReplica initClientMessenger
+INFO: AR.server2 maybe creating  client messenger at /127.0.0.1:2002
+Dec 01, 2023 9:21:13 AM edu.umass.cs.reconfiguration.ActiveReplica initClientMessenger
+INFO: AR.server2 adding self as demultiplexer to existing  client messenger
+Dec 01, 2023 9:21:13 AM edu.umass.cs.nio.AbstractPacketDemultiplexer register
+INFO: AbstractPacketDemultiplexer[4]:server2-clientFacing registering types [] for AR.server2
+Dec 01, 2023 9:21:13 AM edu.umass.cs.nio.AbstractPacketDemultiplexer register
+INFO: AbstractPacketDemultiplexer[4]:server2 registering types [START_EPOCH, STOP_EPOCH, REQUEST_EPOCH_FINAL_STATE, DROP_EPOCH_FINAL_STATE, HELLO_REQUEST, EPOCH_FINAL_STATE, REPLICABLE_CLIENT_REQUEST, ECHO_REQUEST] for AR.server2
+Dec 01, 2023 9:21:13 AM edu.umass.cs.reconfiguration.ReconfigurableNode main1
+INFO: server2:/127.0.0.1:1902  server ready (total number of servers=4)
